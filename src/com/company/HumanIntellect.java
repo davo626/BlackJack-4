@@ -9,6 +9,7 @@ public class HumanIntellect extends Intellect {
     static Scanner in = new Scanner(System.in);
 
     @Override
+
     public Command decide(int score) {
         do{
             System.out.print("Hit/Stand: ");
@@ -17,9 +18,12 @@ public class HumanIntellect extends Intellect {
                 return Command.HIT;
             }else if("stand".startsWith(s.toLowerCase())){
                 return Command.STAND;
-            }else{
-                System.out.println("Command not recognized...");
+            }else if("exit".startsWith(s.toLowerCase())) {
+                return Command.EXIT;
+            }
+             else{   System.out.println("Command not recognized...");
             }
         }while(true);
     }
+
 }

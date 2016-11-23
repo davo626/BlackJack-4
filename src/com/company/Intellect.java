@@ -5,4 +5,12 @@ package com.company;
  */
 public abstract class Intellect {
     public abstract Command decide(int score);
+     public Command decideWithoverdraftCheck(int score) {
+
+        if (score > 21) {
+            return Command.STAND;
+        } else {
+            return decide(score);
+        }
+    }
 }
