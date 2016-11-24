@@ -29,7 +29,9 @@ public class Table {
         }
     }
     public void  makingBets() {
+        for (Player player : players) {
 
+        }
     }
     public void  startRound(){
         for (Player player : players) {
@@ -61,14 +63,17 @@ public class Table {
                     player.state = PlayerState.LOSS;
                 else if (dealer.hand.countScore() > 21) {
                     player.state = PlayerState.WIN;
-
+                    player.bet=player.bet+player.activeBet+player.activeBet;
                 } else if (dealer.hand.countScore() > player.hand.countScore())
                     player.state = PlayerState.LOSS;
                 else {
                     player.state = PlayerState.WIN;
-
+                    player.bet=player.bet+player.activeBet+player.activeBet;
                 }
+            }else{player.state = PlayerState.DRAW;
+                player.bet=player.bet+player.activeBet;
             }
+
 
 
 

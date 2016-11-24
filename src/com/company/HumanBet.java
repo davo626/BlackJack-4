@@ -7,14 +7,15 @@ import java.util.Scanner;
  */
 public class HumanBet extends Bet {
     static Scanner in = new Scanner(System.in);
-    public Command makeBet(int bet){
+    public int HumanBet(){
         do {
             System.out.println("Your bet: ");
             int activeBet = in.nextInt();
-            if(activeBet<=bet){
-                return activeBet
-            }else
+
+            if(activeBet>bet) {
                 System.out.println("Uncorrect bet");
-        }while(true)
+
+            }else return activeBet;
+        }while(true);
     }
 }
